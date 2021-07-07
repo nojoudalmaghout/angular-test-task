@@ -1,0 +1,30 @@
+<table responsive="true" class="table table-responsive">
+  <thead>
+    <tr>
+      <th>License</th>
+      <th>Device</th>
+      <th>Capacity</th>
+      <th>Type</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vehicle of vehicleResponse.content | paginate: { 
+      itemsPerPage: pageSize,
+      currentPage: page,
+      totalItems: count }">
+      <td>{{ vehicle.license }}</td>
+      <td>{{ vehicle.device }}</td>
+      <td>{{ vehicle.capacity }}</td>
+      <td *ngIf="vehicle.type==='CAR' || vehicle.type == null"><img src="https://img.icons8.com/ios/48/000000/car--v1.png" /></td>
+      <td *ngIf="vehicle.type==='TRUCK'"><img src="https://img.icons8.com/material-outlined/48/000000/truck.png" /></td>
+      <td>
+        <edit-vehicle [vehicle]="vehicle" (newItemEvent)="update($event)"></edit-vehicle>
+        <button class="btn btn-danger btn-sm" (click)="delete(vehicle)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+<pagination-controls previousLabel="Prev" nextLabel="Next" [responsive]="true" (pageChange)="handlePageChange($event)">
+</pagination-controls>

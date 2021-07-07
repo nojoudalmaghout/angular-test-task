@@ -1,0 +1,50 @@
+<ng-template #editVehicle let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" 
+            id="modal-basic-title">
+            Edit vehicle
+        </h4>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="form" (ngSubmit)="submit()" >
+            <div class="form-group">
+                <label for="license">License</label>
+                <input 
+                    formControlName="license"
+                    id="license" type="text" class="form-control" [(ngModel)]="vehicle.license">
+            </div>
+        
+            <div class="form-group">
+                <label for="device">Device</label>
+                <input 
+                    formControlName="device"
+                    id="device" type="number" class="form-control" [(ngModel)]="vehicle.device">
+            </div>
+        
+            <div class="form-group">
+                <label for="capacity">Capacity</label>
+                <input 
+                    formControlName="capacity"
+                    id="capacity" type="number" class="form-control" [(ngModel)]="vehicle.capacity">
+            </div>
+        
+            <div class="form-group">
+                <label for="type">Type</label>
+                <select 
+                    formControlName="type"
+                    id="type" class="form-control" [(ngModel)]="vehicle.type">
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="CAR">Car</option>
+                    <option value="TRUCK">Truck</option>
+                </select>
+            </div>
+        
+            <button class="btn btn-primary" type="submit">Edit</button>
+        
+        </form>
+    </div>
+</ng-template>
+<button class="btn btn-primary btn-sm" 
+    (click)="open(editVehicle)">
+    Edit
+</button>

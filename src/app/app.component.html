@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5 col-sm-12">
+        <add-vehicle (newVehicleEvent)="addVehicle($event)"></add-vehicle>
+        <vehicle (newMarkersEvent)="setMarkers($event)"></vehicle>
+      </div>
+      <div class="col-md-7 col-sm-12">
+        <here-map _apikey="OWXZq6rTlYUPp9YTo_HkiOYPdzSXxKYl7pkKzBaFP10" lat="53.439" lng="-2.221" width="100%" height="100%" [markers]="markers"></here-map>
+      </div>
+    </div>
+</div>
