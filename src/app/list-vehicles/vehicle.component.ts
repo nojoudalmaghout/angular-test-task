@@ -90,7 +90,7 @@ export class VehicleComponent implements OnInit {
       let data ='<div style="font-size:14px;"><p>{</br>license: ' +vehicle.license+' </br>device: '+vehicle.device+'</br>capacity: '+
       vehicle.capacity+'</br>type: '+vehicle.type+'</br>}</p></div>';
       let icon='';
-      if(vehicle.type=="CAR"){
+      if(vehicle.type=="CAR" || vehicle.type==null){
         icon='https://img.icons8.com/ios/48/000000/car--v1.png';
       }
       else{
