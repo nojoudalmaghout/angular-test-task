@@ -5,15 +5,14 @@ import { VehicleResponse } from '../common/VehicleResponse';
 import { AppError } from '../common/app-error';
 import { BadInputError } from '../common/bad-input-error';
 import { NotFoundError } from '../common/not-found-error';
-import { Subscription } from 'rxjs';
 import { Marker } from '../here-map/Marker';
 
 @Component({
   selector: 'vehicle',
-  templateUrl: './vehicle.component.html',
-  styleUrls: ['./vehicle.component.css']
+  templateUrl: './list-vehicles.component.html',
+  styleUrls: ['./list-vehicles.component.css']
 })
-export class VehicleComponent implements OnInit {
+export class ListVehiclesComponent implements OnInit {
 
 
   @Output() newMarkersEvent = new EventEmitter<Marker[]>();

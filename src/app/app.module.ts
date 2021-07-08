@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VehicleService } from './services/vehicle.service';
 import {HttpClientModule} from '@angular/common/http';
-import { VehicleComponent } from './list-vehicles/vehicle.component';
+import { ListVehiclesComponent } from './list-vehicles/list-vehicles.component';
 import { DataTablesModule } from 'angular-datatables';
 import { HereMapComponent } from './here-map/here-map.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +21,7 @@ import { AppErrorHandler } from './common/app-error-handler';
 @NgModule({
   declarations: [
     AppComponent,
-    VehicleComponent,
+    ListVehiclesComponent,
     HereMapComponent,
     AddVehicleComponent,
     EditVehicleComponent
